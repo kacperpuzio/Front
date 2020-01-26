@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:o="http://omnifaces.org/ui"
+	  xmlns:of="http://omnifaces.org/functions"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form>
+		<ul>
+			<h:form>
+				<h3>Lista ikon</h3>
+				<h:selectOneListbox id="list" size="10"
+									value="#{bean.selected}"
+									valueChangeListener="#{bean.valueChanged}"
+									onchange="submit()">
+					<f:selectItems var="img" value="#{bean.list}" itemValue="#{img}" itemLabel="#{img.id}"/>
+				</h:selectOneListbox>
+
+			</h:form>
+		</ul>
+		<!--		<ul>-->
+		<!--			<ui:repeat value="#{bean.list}" var="ImageWrapper">-->
+		<!--				<li>-->
+		<!--					<h:link value="#{ImageWrapper.imageName}" outcome="ImageWrapper">-->
+		<!--						<f:param name="id" value="#{ImageWrapper.id}" />-->
+		<!--					</h:link>-->
+		<!--				</li>-->
+		<!--			</ui:repeat>-->
+		<!--		</ul>-->
+	</h:form>
+
+<!--	<o:graphicImage id="icon" value="#{bean.icon}" dataURI="true" />-->
+	<h:outputText id="icon" value="#{bean.icon}" />
+
+</html>
